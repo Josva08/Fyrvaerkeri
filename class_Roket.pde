@@ -1,4 +1,5 @@
 class Rocket {
+  // Atributter, klassens tilstand, objektets egenskaber
   float krut=random(100,400);
   float xPos=0;
   float yPos=800;
@@ -12,11 +13,14 @@ class Rocket {
 
   //ingen konstruktør
   
+  // flytter raketten
   void move() {
     xPos=xPos+angle;
     yPos -=2;
   }
 
+  
+  // her styres rækkefølgen og hvornår raketten skal eksplodere
   void controller() {
     if (lunte < frameCount) {
       if (krut>yPos) {
@@ -28,7 +32,7 @@ class Rocket {
     }
   }
 
-
+// vis raketten på skærmen 
   void vis() {
     if (yPos>krut) {
       fill(0);
@@ -38,8 +42,11 @@ class Rocket {
     circle(xPos, yPos, dia);
   }
 
+  // denne funktion laver ekspltionen. Den er tom fordi den skal bruges til at nedarve raket. 
   void boom() {} // lavet kun til at overwrite
 }
+
+
 //**************** NEDARVNING ***********************/
 class Rocket2 extends Rocket{
   void boom() {
