@@ -5,11 +5,13 @@ class Rocket {
   int dia = 10;
   int lunte = 0;
   int alpha=255;
+  int r=int(random(255));
+  int g=int(random(255));
+  int b=int(random(255));
   float angle=random(1,3);
 
-  Rocket() {
-  }
-
+  //ingen konstruktør
+  
   void move() {
     xPos=xPos+angle;
     yPos -=2;
@@ -31,13 +33,25 @@ class Rocket {
     if (yPos>krut) {
       fill(0);
     } else {
-      fill(225, 255, 0, alpha);
+      fill(r, g, b, alpha);
     }
     circle(xPos, yPos, dia);
   }
 
+  void boom() {} // lavet kun til at overwrite
+}
+//**************** NEDARVNING ***********************/
+class Rocket2 extends Rocket{
   void boom() {
     dia++;
     alpha--;
+  }
+}
+
+
+class Rocket3 extends Rocket{
+  void boom() {
+    //SKRIV DIN KODE HER
+
   }
 }
