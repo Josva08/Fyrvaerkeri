@@ -1,6 +1,6 @@
 class Rocket {
   // Atributter, klassens tilstand, objektets egenskaber
-  float krut=random(100,400);
+  float krut=random(100, 400);
   float xPos=0;
   float yPos=800;
   int dia = 10;
@@ -9,17 +9,17 @@ class Rocket {
   int r=int(random(255));
   int g=int(random(255));
   int b=int(random(255));
-  float angle=random(1,3);
+  float angle=random(1, 3);
 
   //ingen konstruktør
-  
+
   // flytter raketten
   void move() {
     xPos=xPos+angle;
     yPos -=2;
   }
 
-  
+
   // her styres rækkefølgen og hvornår raketten skal eksplodere
   void controller() {
     if (lunte < frameCount) {
@@ -32,7 +32,7 @@ class Rocket {
     }
   }
 
-// vis raketten på skærmen 
+  // vis raketten på skærmen
   void vis() {
     if (yPos>krut) {
       fill(0);
@@ -42,13 +42,14 @@ class Rocket {
     circle(xPos, yPos, dia);
   }
 
-  // denne funktion laver ekspltionen. Den er tom fordi den skal bruges til at nedarve raket. 
-  void boom() {} // lavet kun til at overwrite
+  // denne funktion laver ekspltionen. Den er tom fordi den skal bruges til at nedarve raket.
+  void boom() {
+  } // lavet kun til at overwrite
 }
 
 
 //**************** NEDARVNING ***********************/
-class Rocket2 extends Rocket{
+class Rocket2 extends Rocket {
   void boom() {
     dia++;
     alpha--;
@@ -56,9 +57,8 @@ class Rocket2 extends Rocket{
 }
 
 
-class Rocket3 extends Rocket{
+class Rocket3 extends Rocket {
   void boom() {
     //SKRIV DIN KODE HER
-
   }
 }
